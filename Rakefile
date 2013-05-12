@@ -3,5 +3,10 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
+require 'rake/dsl_definition'
+require 'rdoc'
 
 SampleApp::Application.load_tasks
+SampleApp::Application.class_eval do
+  include Rake::DSL
+end
