@@ -5717,3 +5717,208 @@ ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.c
 Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-06-20 00:55:06 +0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (2.4ms)
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (1.9ms)
+Rendered users/show.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 198ms (Views: 144.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-06-20 00:55:07 +0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered users/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 49ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:55:09 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:55:09 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-20 00:55:15 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:55:16 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:55:16 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2013-06-20 00:55:17 +0200
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (1.7ms)
+Rendered users/new.html.erb within layouts/application (146.9ms)
+Completed 200 OK in 173ms (Views: 151.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:55:17 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:55:17 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-20 00:55:46 +0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpwXk75FYt+7BkVbkEkeI4Gs+9NbTBGO4va9dszB4w8=", "user"=>{"nom"=>"doumdoum", "email"=>"doum@doum.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Inscription"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('doum@doum.com')) LIMIT 1
+Rendered shared/_error_messages.html.erb (1.9ms)
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered users/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 90ms (Views: 20.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:55:46 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:55:46 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-20 00:57:26 +0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpwXk75FYt+7BkVbkEkeI4Gs+9NbTBGO4va9dszB4w8=", "user"=>{"nom"=>"doumdoum", "email"=>"doum@doum.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Inscription"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('doum@doum.com')) LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (3.5ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered users/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 56ms (Views: 22.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:57:26 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:57:26 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-20 00:57:31 +0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpwXk75FYt+7BkVbkEkeI4Gs+9NbTBGO4va9dszB4w8=", "user"=>{"nom"=>"doumdoum", "email"=>"doum@doum.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Inscription"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('doum@doum.com')) LIMIT 1
+Rendered shared/_error_messages.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered users/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 78ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:57:31 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:57:31 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-20 00:57:45 +0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpwXk75FYt+7BkVbkEkeI4Gs+9NbTBGO4va9dszB4w8=", "user"=>{"nom"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Inscription"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('')) LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (5.6ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered users/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 61ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2013-06-20 00:57:46 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2013-06-20 00:57:46 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered vendor/bundle/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
