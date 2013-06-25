@@ -1,7 +1,9 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :nom, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation
+
+  has_many :microposts, :dependent => :destroy
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -24,7 +26,6 @@ class User < ActiveRecord::Base
     return user if user.has_password?(submitted_password)
   end
   
-  
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
     return nil if user.nil?
@@ -36,6 +37,10 @@ class User < ActiveRecord::Base
     (user && user.salt == cookie_salt) ? user : nil
   end
   
+  def feed
+      # C'est un préliminaire. Cf. chapitre 12 pour l'implémentation complète.
+      Micropost.where("user_id = ?", id)
+  end
   
 
   private
